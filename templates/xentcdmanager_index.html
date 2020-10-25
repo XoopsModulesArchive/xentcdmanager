@@ -1,0 +1,31 @@
+<{include file="db:xentcdmanager_header.html" search=$search}>
+
+<div class='sectionTitle'><{$path}></div><br>
+
+<table width="100%" align="center" border="1" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2">
+	<tr>
+        <td bgcolor="#2F5376" id="catlistheader"><a href='index.php?tri=2'><{$nametext}></a></td>
+        <td bgcolor="#2F5376" id="catlistheader"><{$desctext}></td>
+        <{if $isPrefix == 1}>
+        	<td bgcolor="#2F5376" id="catlistheader"><a href='index.php?tri=3'><{$prefixtext}></a></td>
+        <{/if}>
+    </tr>
+
+    <{if $hasSubCat == 1}>
+	    <{foreach item=cat_data from=$cat_data_list}>
+	        <tr>
+	            <td id="catlist"><a href="scat_list.php?id=<{$cat_data.ID_CAT}>"><{$cat_data.name}></a></td>
+	            <td id="catlist"><{$cat_data.description}></td>
+                <{if $isPrefix == 1}>
+	            	<td id="catlist"><{$cat_data.prefix}></td>
+                <{/if}>
+	        </tr>
+	    <{/foreach}>
+        </table>
+	<{else}>
+        </table>
+        <{$hasNoSubCatText}>
+	<{/if}>
+
+
+<{include file="db:xentcdmanager_footer.html"}>

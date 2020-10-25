@@ -1,0 +1,79 @@
+<{include file="db:xentcdmanager_header.html"}>
+
+
+<div class='sectionTitle'><{$path}></div><br>
+
+
+
+<table width="100%" align="center" border="1" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2">
+    <tr>
+        <td bgcolor="#2F5376" id="catlistheader"><a href='scat_list.php?id=<{$idcatparent}>&tri=2'><{$textname}></a></td>
+        <td bgcolor="#2F5376" id="catlistheader"><{$textdesc}></td>
+        <{if $isPrefix == 1}>
+        	<td bgcolor="#2F5376" id="catlistheader"><a href='scat_list.php?id=<{$idcatparent}>&tri=3'><{$textprefix}></a></td>
+        <{/if}>
+    </tr>
+
+	<{if $hasSubCat == 1}>
+	    <{foreach item=cat_data from=$cat_data_list}>
+
+	            <tr>
+	                <td id="catlist"><a href="scat_list.php?id=<{$cat_data.ID_CAT}>"><{$cat_data.name}></a></td>
+	                <td id="catlist"><{$cat_data.description}></td>
+                    <{if $isPrefix == 1}>
+	                	<td id="catlist"><{$cat_data.prefix}></td>
+                    <{/if}>
+	            </tr>
+
+	    <{/foreach}>
+        </table>
+	<{else}>
+        </table>
+        <{$hasNoSubCatText}>
+	<{/if}>
+
+
+
+<br><br><br>
+<!-- tableau des cd pour les cd-->
+
+<div class='sectionTitle'><{$cd_title}></div>
+<table width="100%" align="center" border="1" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2">
+<tr valign="top">
+    <td bgcolor="#2F5376" id="catlistheader"><a href='scat_list.php?id=<{$idcatparent}>&tri=1'><{$textno}></a></td>
+    <td bgcolor="#2F5376" id="catlistheader"><a href='scat_list.php?id=<{$idcatparent}>&tri=2'><{$textname}></a></td>
+    <td bgcolor="#2F5376" id="catlistheader"><a href='scat_list.php?id=<{$idcatparent}>&tri=3'><{$textlang}></a></td>
+    <td bgcolor="#2F5376" id="catlistheader"><{$optionrent}></td>
+</tr>
+
+<{if $hasCd == 1}>
+	<{foreach item=cd from=$cd}>
+	    <tr valign="top">
+	        <td align="left" id="catlist">
+            	<{if $isPrefix == 1}>
+                	<{$cd.prefix}>
+                <{/if}>
+                <{$cd.number}>
+            </td>
+	        <td id="catlist"><a href="cd_desc.php?id=<{$cd.ID_CD}>"><{$cd.name}>&nbsp;CD&nbsp;<{$cd.nogroup}> <{$cd.copy}></a></td>
+	        <td id="catlist" width="15%"><{$cd.language}></td>
+	        <td id="catlist" width='15%'><a href="cd_reserve.php?id=<{$cd.ID_CD}>" title="<{$textrent}>"><center><img src='images/rent.jpeg' width='30' height='30'></img></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="view_res.php?id=<{$cd.ID_CD}>&month=<{$month}>&year=<{$year}>" title="<{$viewRes}>"><img src='images/jumelle.gif' width='30' height='30'></img></a>
+
+            <{if $isAdmin}>
+            	&nbsp;&nbsp;&nbsp;&nbsp;<a href="admin/admincd.php?op=CDEditCd&id=<{$cd.ID_CD}>&start=0" title="<{$editCd}>"><img src='images/edit_userside.gif' width='30' height='30'></img></center></a>
+            <{/if}>
+            </td>
+	    </tr>
+	<{/foreach}>
+    </table>
+<{else}>
+    </table>
+    <{$hasNoCdText}>
+<{/if}>
+
+
+
+
+<br><br><br>
+
+<{include file="db:xentcdmanager_footer.html"}>

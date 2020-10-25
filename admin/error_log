@@ -1,0 +1,5 @@
+[22-Oct-2004 14:05:13] PHP Parse error:  parse error, unexpected '*' in /home/odesia/public_html/intranet/modules/xentcdmanager/admin/admincd.php on line 547
+[22-Oct-2004 14:11:06] PHP Parse error:  parse error, unexpected T_VARIABLE in /home/odesia/public_html/intranet/modules/xentcdmanager/admin/admincd.php on line 185
+[22-Oct-2004 15:30:05] PHP Parse error:  parse error, unexpected T_ELSE in /home/odesia/public_html/intranet/modules/xentcdmanager/admin/admincd.php on line 582
+[01-Nov-2004 10:18:17] PHP Parse error:  parse error, unexpected '{' in /home/odesia/public_html/intranet/modules/xentcdmanager/admin/admincd.php on line 185
+[01-Nov-2004 11:14:40] PHP Parse error:  parse error, unexpected T_VARIABLE in /home/odesia/public_html/intranet/modules/xentcdmanager/admin/admincd.php on line 320

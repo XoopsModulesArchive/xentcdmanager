@@ -1,0 +1,137 @@
+/* Created by TopStyle Pro Trial Version - www.bradsoft.com */
+
+.menu {
+	padding-top: 10px;
+}
+
+.adminActionMenu a{
+	font-size:20px;
+}
+
+.searchButton {
+	height: 22px;
+}
+
+.sectionTitle {
+	font-size: 16px;
+	font-weight: bold;
+	color: #394F76;
+}
+
+.footer {
+	border: 1px;
+	border-color: #000000;
+	border-bottom: dotted;
+	width: 80%;
+}
+
+td#catlist{
+	font-size: 10px;
+	color: #000000;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	padding-left: 3px;
+	font-weight: bold;
+	border-bottom: 1px;
+	border-right: 1px;
+	border-color: Black;
+}
+
+td#catlistheader{
+	border-right: 1px;
+	font-size: 10px;
+	color: #FFFFFF;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	padding-left: 3px;
+	font-weight: bold;
+	border-bottom: 1px;
+	border-color: Black;
+}
+
+td#catlistheader a{
+	border-right: 1px;
+	font-size: 10px;
+	color: #FFFFFF;
+	text-decoration: underline;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	padding-left: 3px;
+	font-weight: bold;
+	border-bottom: 1px;
+	border-color: Black;
+}
+
+.smalltextbox {
+	font-family:Verdana,Arial,sans-serif; 
+	font-size:9pt; 
+	color:black;
+	background-color:white; 
+	border:black;
+	border-width: 1px; 
+	border-style: solid; 
+	width:150px;
+	height:15px;
+}
+
+.cdLateNApproved{
+	color: #F18B36;
+	margin-bottom: 15px;
+	font-size: 8px;
+}
+
+.cdLateApproved{
+	color: Red;
+	margin-bottom: 15px;
+	font-size: 8px;
+}
+
+.cdReturned{
+	color: #394f76;
+	text-decoration: line-through;
+	margin-bottom: 15px;
+	font-size: 8px;
+}
+
+.cdToComeNApproved{
+	color: #394f76;
+	margin-bottom:15px;	
+	font-size: 8px;
+}
+
+.cdToComeApproved{
+	color: #2E8B57;
+	margin-bottom: 15px;
+	font-size: 8px;	
+}
+
+.cdLateNApprovedLegend{
+	color: #F18B36;
+	margin-bottom: 2px;
+	font-size: 8px;
+}
+
+.cdLateApprovedLegend{
+	color: Red;
+	margin-bottom: 2px;
+	font-size: 8px;
+}
+
+.cdReturnedLegend{
+	color: #394f76;
+	text-decoration: line-through;
+	margin-bottom: 2px;
+	font-size: 8px;
+}
+
+.cdToComeNApprovedLegend{
+	color: #394f76;
+	margin-bottom:2px;	
+	font-size: 8px;
+}
+
+.cdToComeApprovedLegend{
+	color: #2E8B57;
+	margin-bottom: 2px;
+	font-size: 8px;	
+}

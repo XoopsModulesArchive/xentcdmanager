@@ -1,0 +1,208 @@
+# phpMyAdmin SQL Dump
+# version 2.5.6
+# http://www.phpmyadmin.net
+#
+# Host: localhost
+# Generation Time: Oct 26, 2004 at 12:44 PM
+# Server version: 4.0.20
+# PHP Version: 4.3.8
+# 
+# 
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `xent_cm_cat`
+#
+
+CREATE TABLE `xent_cm_cat` (
+  `ID_CAT` int(5) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
+  `description` varchar(255) default NULL,
+  `prefix` varchar(255) default NULL,
+  `id_cat_parent` int(5) NOT NULL default '0',
+  KEY `ID_CAT` (`ID_CAT`)
+) TYPE=MyISAM COMMENT='Table des différentes catégories de cd' AUTO_INCREMENT=1 ;
+
+#
+# Dumping data for table `xent_cm_cat`
+#
+
+INSERT INTO `xent_cm_cat` VALUES (3, 'Microsoft', '', '', 0);
+INSERT INTO `xent_cm_cat` VALUES (4, 'Backup', '', '', 0);
+INSERT INTO `xent_cm_cat` VALUES (5, 'MSDN', '', '', 3);
+INSERT INTO `xent_cm_cat` VALUES (6, 'Servers', '', '', 5);
+INSERT INTO `xent_cm_cat` VALUES (7, 'Developer Tools', '', '', 5);
+INSERT INTO `xent_cm_cat` VALUES (8, 'Subscriptions Index', '', '', 5);
+INSERT INTO `xent_cm_cat` VALUES (9, 'Applications', '', '', 5);
+INSERT INTO `xent_cm_cat` VALUES (10, 'Plattforms', '', '', 5);
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `xent_cm_cd`
+#
+
+CREATE TABLE `xent_cm_cd` (
+  `ID_CD` int(5) NOT NULL auto_increment,
+  `name` text NOT NULL,
+  `number` varchar(11) NOT NULL default '0',
+  `description` varchar(255) default NULL,
+  `nogroup` int(5) NOT NULL default '0',
+  `copy` int(5) NOT NULL default '0',
+  `status` int(5) NOT NULL default '0',
+  `id_cat` int(5) NOT NULL default '0',
+  `id_group` int(5) NOT NULL default '0',
+  `language` varchar(255) NOT NULL default '',
+  `date_parution` varchar(255) NOT NULL default '',
+  `cdkey` varchar(255) NOT NULL default '',
+  KEY `ID_CD` (`ID_CD`)
+) TYPE=MyISAM COMMENT='Les cdpour les différentes catégories' AUTO_INCREMENT=1 ;
+
+#
+# Dumping data for table `xent_cm_cd`
+#
+
+
+INSERT INTO `xent_cm_cd` VALUES (13, 'Microsoft Internet Security and Acceleration Server 2000, Enterprise Edition', '0794.1', '\r\n', 1, 0, 1, 6, 0, 'French', 'March 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (14, 'MSDN Library for Visual Studio 2005 Beta, Disk 1', '2708', '', 1, 0, 1, 7, 2, 'English', 'August 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (15, 'SharePoint Portal Server 2001, SharePoint Portal Server 2001 Service Pack 2A', '0848.1', '', 1, 0, 1, 6, 0, 'French', 'June 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (16, 'SQL Server 2000 Service Pack 2, SQL Server 2000 Desktop Engine Service Pack 2', '0966.1', '', 1, 0, 1, 6, 0, 'English', 'March 2002', '');
+INSERT INTO `xent_cm_cd` VALUES (17, 'SQL Server 2000 Reporting Services Developer Edition (English, French, German, Italian, ...), SQL Server 2000 Service Pack 3A (English)', '0966.4', '', 1, 0, 1, 6, 0, 'English, Multilanguage', 'April 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (18, 'SQL Server 2000 Service Pack 3a (English), SQL Server 2000 Reporting Services Developer Edition, SQL Server 2000 Reporting Services Standard Edition, SQL Server 2000 Reporting Services Enterprise Edition (English, French, German, ...)', '0966.5', '', 1, 0, 1, 6, 0, 'English, Multilanguage', 'June 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (19, 'Microsoft Content Management Server 2002 Developer Edition, BizTalk Server 2002 Developer Edition', '0989.2', '', 1, 0, 1, 6, 0, 'English', 'January 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (20, 'Microsoft Content Management Server 2002 Developer Edition, Content Management Server 2002 Service Pack 1a, BizTalk Server 2002 Developer Edition', '0989.3', '', 1, 0, 1, 6, 0, 'English', 'February 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (21, 'Microsoft Content Management Server 2002 Developer Edition, Content Management Server 2002 Service Pack 1a, BizTalk Server 2004 Developer Edition', '0989.4', '', 1, 0, 1, 6, 0, 'English', 'May 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (22, 'SQL Server 2000 Service Pack 2, SQL Server 2000 Desktop Engine Service Pack 2', '1019.1', '', 1, 0, 1, 6, 0, 'French', 'April 2002', '');
+INSERT INTO `xent_cm_cd` VALUES (23, 'SQL Server 2000 Service Pack 3, SQL Server 2000 Desktop Engine Service Pack 2, SQL Server 2000 Analysis Services Service Pack 3', '1019.2', '', 1, 0, 1, 6, 0, 'French', 'April 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (27, 'Visual Studio 2005 Beta, Disk 1', '2706', '', 1, 0, 1, 7, 1, 'English', 'August 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (28, 'Microsoft Commerce Server 2002 Service Pack 2 (English, French, German, Japanese), Microsoft Host Integration Server 2000 Service Pack 1 (English, Japanese)', '1891.2', '', 1, 0, 1, 6, 0, 'English, French, German, Japanese', 'December 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (29, 'Visal Studio 6.0, Enterprise Edition Disk 2', '0238', '', 2, 0, 1, 7, 3, 'French', 'January 2001', '');
+INSERT INTO `xent_cm_cd` VALUES (30, 'Microsoft Identity Integration Server 2003, Enterprise Edition', '2372', '', 1, 0, 1, 6, 0, 'English', 'September 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (32, 'Microsoft Exchange Server 2003 Enterprise, Exchange Server 2003 Standard Edition', '2398', '', 1, 0, 1, 6, 0, 'English', 'October 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (33, 'SQL Server for Windows CE 2.0 (English, French, German, ...)', '2546', '', 1, 0, 1, 6, 0, 'English, Multilanguage', 'December 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (34, 'MSDN Library for Visual Studio .NET 2003, Disk 1', '2073', '', 1, 0, 1, 7, 4, 'English', 'May 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (35, 'Microsoft Exchange Server 2003 Enterprise Edition, Exchange Server 2003 Standard Edition', '2399', '', 1, 0, 1, 6, 0, 'French', 'October 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (36, 'Microsoft Office SharePoint Portal Server 2003', '2547', '', 1, 0, 1, 6, 0, 'English', 'December 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (37, 'Microsoft Office SharePoint Portal Server 2003', '2549', '', 1, 0, 1, 6, 0, 'French', 'December 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (38, 'Microsoft Offive Live Communications Server 2003 Standard Edition, Microsoft Office SharePoint Portal Server 2003', '2549.1', '\r\n', 1, 0, 1, 6, 0, 'French', 'April 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (39, 'MSDN Library for Visual Studio .NET 2003, Disk 2', '2074', '', 2, 0, 1, 7, 4, 'English', 'May 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (40, 'Windows Small Business Server 2003', '2589', 'Product Key Required :\r\n1. Sign in to MSDN Subscriber Downloads\r\n2. Choose View All Product Keys form the main drop-down menu\r\n3. Select products for which you need a product key and click the Request Keys button.', 1, 0, 1, 6, 5, 'English', 'January 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (76, 'Microsoft Project Server 2002', '1739', '', 1, 0, 1, 9, 0, 'English', 'August 2002', '');
+INSERT INTO `xent_cm_cd` VALUES (77, 'Microsoft Project Server 2002 Volume License Version', '1740', 'Product Key:\r\n\r\nVolume License Product Key Requiered', 1, 0, 1, 9, 0, 'English', 'August 2002', '');
+INSERT INTO `xent_cm_cd` VALUES (78, 'Microsoft Project Server 2002 Volume License Version', '1774', 'Product Key:\r\n\r\nOffice Application Volume License Product Key Requiered', 1, 0, 1, 9, 0, 'French, German, Italian, Spanish, Portuguese-Brazilian', 'September 2002', '');
+INSERT INTO `xent_cm_cd` VALUES (79, 'Microsoft Office FrontPage 2003, Microsoft Office Publisher 2003', '2499', 'Product Key Required :\r\n1. Sign in to MSDN Subscriber Downloads\r\n2. Choose View All Product Keys form the main drop-down menu\r\n3. Select products for which you need a product key and click the Request Keys button.', 1, 0, 1, 9, 0, 'English', 'November 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (80, 'Microsoft Business Contact Manager for Office Outlook 2003, Microsoft Data Analyzer, Microsoft Office FrontPage 2003', '2499.1', 'Product Key Required :\r\n1. Sign in to MSDN Subscriber Downloads\r\n2. Choose View All Product Keys form the main drop-down menu\r\n3. Select products for which you need a product key and click the Request Keys button.', 1, 0, 1, 9, 0, 'English', 'January 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (81, 'Microsoft Business Solutions Solomon 5.5 Volume 2, Solomon 5.5 Service Pack 1, FRx Financial Reporter 6.5 for Solomon and Forecaster 6.7', '2501.1', '', 1, 0, 1, 9, 0, 'English', 'January 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (82, 'Microsoft Business Solutions Solomon 5.5 Volume 2, Microsoft Business Solutions Solomon 5.5 Service Pack 2, FRx Financial Reporter 6.5 for Solomon and Forecaster 6.7', '2501.2', '', 1, 0, 1, 9, 0, 'English', 'March 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (83, 'Microsoft Business Solutions Great Plains 7.5 Disc 2, Microsoft Business Solutions Great Plains 7.5 Service Pack 1. FRx Financial Reporter 6.5 for Great Plains and Forecaster 6.7', '2503.1', '', 1, 0, 1, 9, 0, 'English', 'January 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (84, 'Microsoft Business Solutions Great Plains 7.5 Disc 2, Microsoft Business Solutions Great Plains 7.5 Service Pack 1. FRx Financial Reporter 6.5 for Great Plains and Forecaster 6.7 - November 2003', '2503.2', '', 1, 0, 1, 9, 0, 'English', 'March 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (85, 'Microsoft Business Solutions Business Portal 2.0 for Great Plains 7.0/7.5, Microsft Business Solutions Great Plains 7.5 Disc 2, Microsoft Business Solutions Great Plains 7.5 Service Pack 3, FRx Financial Reporter 6.5 for Great Plains and Forecaster 6.7 - November 2003', '2503.3', '', 1, 0, 1, 9, 0, 'English', 'May 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (86, 'Microsoft Office Professional Enterprise Edition 2003', '2509', 'Product Key Required :\r\n1. Sign in to MSDN Subscriber Downloads\r\n2. Choose View All Product Keys form the main drop-down menu\r\n3. Select products for which you need a product key and click the Request Keys button.', 1, 0, 1, 9, 0, 'French', 'November 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (87, 'Microsoft Office FrontPage 2003, Microsoft Office Publisher 2003', '2510', 'Product Key Required :\r\n1. Sign in to MSDN Subscriber Downloads\r\n2. Choose View All Product Keys form the main drop-down menu\r\n3. Select products for which you need a product key and click the Request Keys button.', 1, 0, 1, 9, 0, 'French', 'November 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (88, 'Microsoft Office Business Contact Manager 2003, Microsoft Office FrontPage 2003', '2510.1', 'Product Key Required :\r\n1. Sign in to MSDN Subscriber Downloads\r\n2. Choose View All Product Keys form the main drop-down menu\r\n3. Select products for which you need a product key and click the Request Keys button.', 1, 0, 1, 9, 0, 'French', 'February 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (89, 'Microsoft Office OneNote 2003, Microsoft Office Visio Professionnal 2003', '2511', 'Product Key Required :\r\n1. Sign in to MSDN Subscriber Downloads\r\n2. Choose View All Product Keys form the main drop-down menu\r\n3. Select products for which you need a product key and click the Request Keys button.', 1, 0, 1, 9, 0, 'French', 'November 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (90, 'MapPoint 2004 North America - Setup Disc', '2544', '', 1, 0, 1, 9, 0, 'English', 'December 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (91, 'MapPoint 2004 North America - Run Disc', '2545', '', 1, 0, 1, 9, 0, 'English', 'December 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (92, 'Microsoft Office Professional 2003 Multilingual User Interface', '2594', '', 1, 0, 1, 9, 6, 'Arabic, French, German, Italian, Japanese', 'January 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (93, 'Microsoft Office Professional 2003 Multilingual User Interface', '2595', '', 2, 0, 1, 9, 6, 'Danish, Dutch, Finnish, Simplified Chinese', 'January 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (94, 'Microsoft Office Visio Professional 2003 Multilingual User Interface Pack', '2596', '', 1, 0, 1, 9, 7, 'French, German, Italian, Japanese', 'January 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (95, 'Microsoft Office Professional 2003 Multilingual User Interface', '2625', '', 3, 0, 1, 9, 6, 'Multilanguage', 'February 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (96, 'Microsoft Office Professional 2003 Multilingual User Interface', '2626', '', 4, 0, 1, 9, 6, 'Multilanguage', 'February 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (97, 'Microsoft Office Visio Professional 2003 Multilingual User Interface Pack', '2627', '', 2, 0, 1, 9, 7, 'Multilanguage', 'February 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (98, 'Microsoft Office Visio Professional 2003 Multilingual User Interface Pack', '2628', '', 3, 0, 1, 9, 7, 'Multilanguage', 'February 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (99, 'Microsoft Office Visio Professional 2003 Multilingual User Interface Pack', '2629', '', 4, 0, 1, 9, 7, 'Multilanguage', 'February 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (100, 'Microsoft Office Project Professional 2003 Multilingual User Interface', '2630', '', 1, 0, 1, 9, 8, 'Multilanguage', 'February 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (101, 'Microsoft Office Project Professional 2003 Multilingual User Interface', '2631', '', 2, 0, 1, 9, 8, 'Multilanguage', 'February 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (102, 'Microsoft Business Solutions CRM Version 1.2, Microsoft Business Solutions CRM Version 1.2 Server, Microsoft Business Solutions CRM Version 1.2 Sales for Outlook, Microsoft Business Solutions CRM Version 1.2 Documentation, Microsoft Business Solutions CRM Version 1.2 Crystal Reports Enhanced Edition, Microsoft Business Solutions CRM Data Migration Framework Version 1.2', '2647', '', 1, 0, 1, 9, 0, 'English', 'March 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (103, 'Microsoft Business Solutions CRM Integration 1.2 for Great Plains, Microsoft Visio 2002 Standard Edition', '2653', '', 1, 0, 1, 9, 0, 'English', 'April 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (104, 'Microsoft Business Solutions CRM Version 1.2, Microsoft Business Solutions CRM Version 1.2 Server, Microsoft Business Solutions CRM Version 1.2 Sales for Outlook, Microsoft Business Solutions CRM Version 1.2 Documentation, Microsoft Business Solutions CRM Version 1.2 Crystal Reports Enhanced Edition, Microsoft Business Solutions CRM Data Migration Framework Version 1.2', '2654', '', 1, 0, 1, 9, 0, 'International English', 'April 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (105, 'Microsoft Business Network Professional Edition Version 1.0', '2655', '', 1, 0, 1, 9, 0, 'English', 'April 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (106, 'Microsoft Business Network Professional Edition Version 1.0, Microsoft Business Network Service Pack 1, Microsoft Business Network SDK Service Pack 1', '2655.1', '', 1, 0, 1, 9, 0, 'English', 'July 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (107, 'Microsoft Business Solutions CRM Version 1.2, Microsoft Business Solutions CRM Version 1.2 Server, Microsoft Business Solutions CRM Version 1.2 Sales for Outlook, Microsoft Business Solutions CRM Version 1.2 Documentation, Microsoft Business Solutions CRM Version 1.2 Crystal Reports Enhanced Edition', '2657', '', 1, 0, 1, 9, 0, 'French', 'April 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (108, 'Microsoft Office Visio Professional 2003 Multilingual User Interface Pack (Estonian, Greek, Hebrew, Hindi, Latvian, Lithuanian, Russian, Ukranian)', '2666', '', 5, 0, 1, 9, 7, 'Multilanguage', 'May 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (109, 'Microsoft Office Visio Professional 2003 Multilingual User Interface Pack (Bulgarian, Croatian, Romanian, Serbian, Slovak, Slovenian, Thai', '2670', '', 6, 0, 1, 9, 7, 'Multilanguage', 'June 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (110, 'Microsoft Office Professional 2003 Multilingual User Interface (Greek, Korean, Portuguese-Brazil, Portuguese-Portugual, Spanish, Traditional Chinese', '2671', '', 3, 0, 1, 9, 6, 'Multilanguage', 'June 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (139, 'Windows Server 2003 Multilingual User Interface Pack (German, Korean, Japanese, Simplified Chinese, Traditional Chinese)', '2331', '', 1, 0, 1, 10, 10, 'Multilanguage', 'July 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (140, 'Windows Server 2003 Multilingual User Interface Pack (Dutch, French, Italian, Portuguese-Brazil, Spanish, Swedish)', '2332', '', 2, 0, 1, 10, 10, 'Multilanguage', 'July 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (141, 'Windows Server 2003 Multilingual User Interface Pack (Arabic, Czech, Danish, Finnish, Greek, Hebrew, Hungarian, Norwegian, Polish, Portuguese-Portugal, Russian, Turkish)', '2369', 'Disc 3 and 4', 3, 0, 1, 10, 10, 'Multilanguage', 'September 2003', '');
+INSERT INTO `xent_cm_cd` VALUES (142, 'Windows Logo Hardware Compatibility Test Kit for Windows XP version 12.0', '1846.3', '', 1, 0, 1, 10, 0, 'English', 'October 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (143, 'Windows XP Service Pack 2 with Advanced Security Technologies', '2780', '', 1, 0, 1, 10, 0, 'French', 'October 2004', '');
+INSERT INTO `xent_cm_cd` VALUES (147, 'Visal Studio 6.0, Enterprise Edition Disk 1', '0237', '', 1, 0, 1, 7, 3, 'French', 'January 2001', '');
+INSERT INTO `xent_cm_cd` VALUES (148, 'Visal Studio 6.0, Enterprise Edition Disk 3', '0239', '', 3, 0, 1, 7, 3, 'French', 'January 2001', '');
+INSERT INTO `xent_cm_cd` VALUES (149, 'Visual Studio 6.0 Service Pack 5, Macro Assembler 6.11, Visual C++ 1.2', '0773.1', '', 1, 0, 1, 7, 0, 'English', 'October 2001', '');
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `xent_cm_cd_group`
+#
+
+CREATE TABLE `xent_cm_cd_group` (
+  `ID_GROUP` int(5) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
+  `description` varchar(255) default NULL,
+  KEY `ID_GROUP` (`ID_GROUP`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+#
+# Dumping data for table `xent_cm_cd_group`
+#
+
+INSERT INTO `xent_cm_cd_group` VALUES (1, 'Visual Studio 2005 Beta', 'English\r\n');
+INSERT INTO `xent_cm_cd_group` VALUES (2, 'MSDN Library for Visual Studio 2005 Beta', 'English');
+INSERT INTO `xent_cm_cd_group` VALUES (3, 'Visual Studio 6.0, Enterprise Edition', 'French');
+INSERT INTO `xent_cm_cd_group` VALUES (4, 'MSDN Library for Visual Studio .NET 2003', 'English');
+INSERT INTO `xent_cm_cd_group` VALUES (5, 'Windows Small Business Server 2003', 'English\r\n\r\nProduct Key Required :\r\n1. Sign in to MSDN Subscriber Downloads\r\n2. Choose Product Keys Tab\r\n3. Select the products for which you need a product key and click the Request Keys button');
+INSERT INTO `xent_cm_cd_group` VALUES (6, 'Microsoft Office Professional 2003 Multilingual User Interface', '');
+INSERT INTO `xent_cm_cd_group` VALUES (7, 'Microsoft Office Visio Professional 2003 Multilingual User Interface Pack', '');
+INSERT INTO `xent_cm_cd_group` VALUES (8, 'Microsoft Office Project Professional 2003 Multilingual User Interface', '');
+INSERT INTO `xent_cm_cd_group` VALUES (9, 'Windows 2000 Multilanguage Version', '');
+INSERT INTO `xent_cm_cd_group` VALUES (10, 'Windows Server 2003 Multilingual User Interface Pack', '');
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `xent_cm_rent`
+#
+
+CREATE TABLE `xent_cm_rent` (
+  `ID_RENT` int(5) NOT NULL auto_increment,
+  `date_rent` varchar(255) NOT NULL default '0',
+  `date_back` varchar(255) NOT NULL default '0',
+  `date_returned` varchar(255) NOT NULL default '',
+  `status` int(5) NOT NULL default '0',
+  `description` varchar(255) default NULL,
+  `id_user` int(5) NOT NULL default '0',
+  `id_cd` int(5) NOT NULL default '0',
+  `isPrint` int(5) NOT NULL default '0',
+  `emailSent` int(5) NOT NULL default '0',
+  `res_group` int(5) NOT NULL default '0',
+  KEY `ID_RENT` (`ID_RENT`)
+) TYPE=MyISAM COMMENT='La liste de tous les emprunts' AUTO_INCREMENT=1 ;
+
+#
+# Dumping data for table `xent_cm_rent`
+#
+
+
+# --------------------------------------------------------
+
+#
+# Table structure for table `xent_cm_searchcat`
+#
+
+CREATE TABLE `xent_cm_searchcat` (
+  `ID_SEARCHCAT` int(5) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL default '',
+  KEY `ID_SEARCHCAT` (`ID_SEARCHCAT`)
+) TYPE=MyISAM AUTO_INCREMENT=1 ;
+
+#
+# Dumping data for table `xent_cm_searchcat`
+#
+
+INSERT INTO `xent_cm_searchcat` VALUES (1, 'CD Name');
+INSERT INTO `xent_cm_searchcat` VALUES (2, 'CD Number');
+INSERT INTO `xent_cm_searchcat` VALUES (3, 'Category Name');
+    

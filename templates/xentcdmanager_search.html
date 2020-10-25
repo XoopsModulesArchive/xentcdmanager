@@ -1,0 +1,26 @@
+<{include file="db:xentcdmanager_header.html"}>
+
+<div class='sectionTitle'><b><u><{$searchtitle}></u></b></div><br><br>
+
+<{$searchtext}><{$searchword}><br><br><br>
+
+<div class='sectionTitle'><{$resultstext}></div><br>
+
+<table width="100%" align="center" border="1" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2">
+	<{foreach item=cd_search from=$cd_search}>
+	    <tr>
+	        <td bgcolor="#2F5376" id="catlistheader" width="8%"><{$cd_search.number}></td>
+            <td id="catlist"><a href="<{$cd_search.page}>.php?id=<{$cd_search.ID}>"><{$cd_search.name}><{$cd_search.cdtext}><{$cd_search.nogroup}><{$cd_search.copy}></td>
+            <td id="catlist" width="15%"><{$cd_search.language}></td>
+	    </tr>
+    <{/foreach}>
+</table>
+
+<{foreach item=page from=$page}>
+
+    	<{$page.p}>
+
+<{/foreach}>
+
+
+<{include file="db:xentcdmanager_footer.html"}>

@@ -1,0 +1,30 @@
+<{include file="db:xentcdmanager_header.html"}>
+
+<div class='sectionTitle'><{$group_title}></div><br>
+
+<table width="100%" align="center" border="1" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2">
+    <{foreach item=group from=$group}>
+        <tr>
+            <td bgcolor="#2F5376" id="catlistheader" width="15%">ID :</td>
+        	<td id="catlist"><{$group.ID_GROUP}></td>
+        </tr>
+    	<tr>
+			<td bgcolor="#2F5376" id="catlistheader">Nom :</td>
+        	<td id="catlist"><{$group.name}></td>
+    	</tr>
+        <tr>
+			<td bgcolor="#2F5376" id="catlistheader">Description :</td>
+        	<td id="catlist"><{$group.description}></td>
+    	</tr>
+        <tr>
+        	<td bgcolor="#2F5376" id="catlistheader">CD du groupe :</td>
+            <td id="catlist">
+	            <{foreach item=cd_from_group from=$cd_from_group}>
+                	<a href="cd_desc.php?id=<{$cd_from_group.ID_CD}>"><{$cd_from_group.name}>&nbsp;CD&nbsp;<{$cd_from_group.nogroup}></a><br>
+	            <{/foreach}>
+            </td>
+        </tr>
+    <{/foreach}>
+</table>
+
+<{include file="db:xentcdmanager_footer.html"}>

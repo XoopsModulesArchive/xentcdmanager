@@ -1,0 +1,16 @@
+<{if $block.hasRents == ""}>
+	<{foreach item=res from=$block.display}>
+	    <font size="1"><{$res.cd_name}></font>
+	<{/foreach}>
+<{else}>
+	<{$block.hasRents}>
+<{/if}>
+<br><br>
+<hr>
+<br><br>
+<u><{$block.legend}></u>
+<b><{$block.cdLateNApproved}></b>
+<b><{$block.cdLateApproved}></b>
+<b><{$block.cdToComeNApproved}></b>
+<b><{$block.cdToComeApproved}></b>
+<b><{$block.cdReturned}></font></b>

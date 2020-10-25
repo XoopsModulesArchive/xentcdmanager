@@ -1,0 +1,52 @@
+<{include file="db:xentcdmanager_header.html"}>
+
+<div class='sectionTitle'><{$res_title}></div><br>
+
+
+<div><{$res_text1}>
+    <{foreach item=cd from=$cd}>
+        <b><{$cd.name}>&nbsp;-&nbsp;CD&nbsp;<{$cd.nogroup}>&nbsp;<{$cd.copy}>&nbsp;(<{$cd.prefix}><{$cd.number}>)</b>
+    <{/foreach}>
+<{$res_text2}></div>
+
+<br>
+
+
+
+<{$postuler.javascript}>
+<font size="4"><u><{$postuler.title}></u></font>
+<form name="<{$postuler.name}>" action="<{$postuler.action}>" method="<{$postuler.method}>"<{$postuler.extra}>>
+    <table border="0" summary=""><tr><td>
+    <{foreach item=element from=$postuler.elements}>
+        <{if $element.caption != "Reserve"}>
+            <{if $element.caption != ""}>
+                </td></tr>
+                <tr>
+                    <td width="20%"><{$element.caption}></td>
+                    <td><{$element.body}>
+
+
+            <{else}>
+                <{if $element.name=="cd_reserve_endminute"}>
+                    <{$element.body}></td></tr></table><br><br><table><tr><td>
+                <{else}>
+
+                    <{if $element.name=="cd_reserve_startminute"}>
+                        <{$element.body}></td></tr></table><br><br><table border="0" summary=""><tr><td>
+                    <{else}>
+                        <{$element.body}>
+                    <{/if}>
+                <{/if}>
+            <{/if}>
+        <{else}>
+            </td></tr>
+                <tr>
+                    <td><br><br><{$element.body}>
+        <{/if}>
+    <{/foreach}>
+        </td></tr>
+    </table>
+</form>
+
+
+<{include file="db:xentcdmanager_footer.html"}>

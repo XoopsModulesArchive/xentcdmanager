@@ -1,0 +1,50 @@
+<{include file="db:xentcdmanager_header.html"}>
+
+
+<div class='sectionTitle'><{$cdtitle}></div>
+<table width="100%" align="center" border="1" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2">
+    <tr>
+        <td bgcolor="#2F5376" id="catlistheader" width="15%"><{$textname}></td>
+        <td id="catlist"><a href="cd_desc.php?id=<{$id_cd}>"><{$cd_name}></a></td>
+    </tr>
+    <tr>
+        <td bgcolor="#2F5376" id="catlistheader"><{$textno}></td>
+        <td id="catlist"><{$cd_number}></td>
+    </tr>
+    <tr>
+        <td bgcolor="#2F5376" id="catlistheader"><{$textcddesc}></td>
+        <td id="catlist"><{$cd_desc}></td>
+    </tr>
+    <{if $seeCdKey == '1'}>
+    	<tr>
+	        <td bgcolor="#2F5376" id="catlistheader"><{$textcdkey}></td>
+	        <td id="catlist"><{$cdkey}></td>
+	    </tr>
+    <{/if}>
+</table>
+
+<br><br>
+
+<div class='sectionTitle'><{$restitle}></div>
+<table width="100%" align="center" border="1" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2">
+    <tr>
+        <td bgcolor="#2F5376" id="catlistheader"><{$textdesc}></td>
+        <td id="catlist"><{$desc}></td>
+    </tr>
+    <tr>
+        <td bgcolor="#2F5376" id="catlistheader"><{$textdatestart}></td>
+        <td id="catlist"><{$date_rent}></td>
+    </tr>
+    <tr>
+        <td bgcolor="#2F5376" id="catlistheader"><{$textdateend}></td>
+        <td id="catlist"><{$date_back}></td>
+    </tr>
+    <{if $isAdmin == 1}>
+	    <tr>
+	        <td bgcolor="#2F5376" id="catlistheader"><{$textuser}></td>
+	        <td id="catlist"><{$user_name}></td>
+	    </tr>
+    <{/if}>
+</table>
+
+<{include file="db:xentcdmanager_footer.html"}>

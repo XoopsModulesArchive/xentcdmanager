@@ -1,0 +1,63 @@
+<{include file="db:xentcdmanager_header.html"}>
+
+<div class='sectionTitle'><{$cddesc_title}></div><br>
+
+<table width="100%" align="center" border="1" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2">
+    <{foreach item=cd from=$cd}>
+        <tr>
+            <td bgcolor="#2F5376" id="catlistheader" width="20%"><{$textno}></td>
+        	<td id="catlist"><{$cd.prefix}><{$cd.number}></td>
+        </tr>
+    	<tr>
+			<td bgcolor="#2F5376" id="catlistheader"><{$textname}></td>
+        	<td id="catlist"><{$cd.name}></td>
+    	</tr>
+        <tr>
+			<td bgcolor="#2F5376" id="catlistheader"><{$textdesc}></td>
+        	<td id="catlist"><{$cd.description}></td>
+    	</tr>
+        <tr>
+			<td bgcolor="#2F5376" id="catlistheader"><{$textnoseq}></td>
+        	<td id="catlist"><{$textcd}>&nbsp;<{$cd.nogroup}></td>
+    	</tr>
+        <tr>
+			<td bgcolor="#2F5376" id="catlistheader"><{$textlanguage}></td>
+        	<td id="catlist"><{$cd.language}></td>
+    	</tr>
+        <tr>
+			<td bgcolor="#2F5376" id="catlistheader"><{$textdatep}></td>
+        	<td id="catlist"><{$cd.date_parution}></td>
+    	</tr>
+        <tr>
+			<td bgcolor="#2F5376" id="catlistheader"><{$textcdkey}></td>
+        	<td id="catlist"><{$cd.cdkey}></td>
+    	</tr>
+        <tr>
+			<td bgcolor="#2F5376" id="catlistheader"><{$textcopy}></td>
+        	<td id="catlist"><{$cd.copy}></td>
+    	</tr>
+        <tr>
+			<td bgcolor="#2F5376" id="catlistheader"><{$textgroup}></td>
+        	<td id="catlist"><a href="group_desc.php?id=<{$cd.id_group}>"><{$cd.group}></a></td>
+    	</tr>
+        <tr>
+			<td bgcolor="#2F5376" id="catlistheader"><{$textcat}></td>
+        	<td id="catlist"><a href="scat_list.php?id=<{$cd.id_cat}>"><{$cd.cat}></a></td>
+    	</tr>
+        <tr>
+			<td bgcolor="#2F5376" id="catlistheader"><{$textinstock}></td>
+        	<td id="catlist"><img src="<{$img}>" width='30' height='20'></img></td>
+    	</tr>
+    <{/foreach}>
+</table>
+
+<br>
+<div>
+	<a href="cd_reserve.php?id=<{$cd.ID_CD}>"><{$cd_reserve}></a> |
+    <a href="view_res.php?id=<{$cd.ID_CD}>&month=<{$month}>&year=<{$year}>"><{$cd_viewres}></a> |
+    <{if $isAdmin == 1}>
+    	<a href="admin/admincd.php?op=CDEditCd&id=<{$cd.ID_CD}>&start=0"><{$cd_editcd}></a>
+    <{/if}>
+</div>
+
+<{include file="db:xentcdmanager_footer.html"}>

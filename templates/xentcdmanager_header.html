@@ -1,0 +1,23 @@
+<br><br>
+
+<form name='addcd' id='addcdt' action='search.php?query=$search_box' method='get' onsubmit='return xoopsFormValidate_addcd();' enctype='multipart/form-data'>
+    <table width='100%'  cellspacing='1'>
+        <tr valign='top'>
+            <td align="left">
+            	<div class="menu"><{$menu}></div>
+            </td>
+            <td align="right"><{$search}> &nbsp;&nbsp;<input type='text' name='search_box' class='smalltextbox' size='50' maxlength='255' value=''>
+            	<select name="search_cat">
+                	<{foreach item=searchcat from=$searchcat}>
+                		<option value=<{$searchcat.count}> class='smalltextbox'><{$searchcat.name}></option>
+                    <{/foreach}>
+                </select>
+                <input class="formButton" type="submit" value="Go">
+            </td>
+		</tr>
+    </table>
+    <br><br>
+
+
+    <center><font size='4'><img src="images/xentcdmanager_<{$lang}>.gif"></img></font></center>
+</form>
